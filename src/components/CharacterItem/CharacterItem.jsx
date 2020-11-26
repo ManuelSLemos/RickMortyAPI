@@ -12,6 +12,7 @@ class CharacterItem extends Component {
                 <img src={this.props.item.image} alt={this.props.item.name} />
                 <p>ID: {this.props.item.id} </p>
                 <p>Name: {this.props.item.name} </p>
+                <button> Ver </button>
             </div>
         )
     }
