@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 
+import CharacterList from './containers/CharacterList/CharacterList';
+
 function App() {
   return (
    <Fragment>
-     APP
+     <CharacterList />
    </Fragment>
   );
 }
