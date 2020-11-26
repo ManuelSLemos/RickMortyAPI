@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
+import CharacterItem from '../../components/CharacterItem/CharacterItem';
+
 class CharacterList extends Component {
     constructor(props){
         super(props);
@@ -23,14 +25,10 @@ class CharacterList extends Component {
 
     render(){
         return(
-            <div>
+            <div className="grid">
                 {
                     this.state.characters.map( 
-                        item => <div key={item.id}>
-                                <img src={item.image} alt={item.name} />
-                                <p>ID: {item.id} </p>
-                                <p>Name: {item.name} </p>
-                            </div>
+                        item => <CharacterItem item={item} />
                     )
                 }
             </div>
