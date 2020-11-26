@@ -7,7 +7,7 @@ class CharacterList extends Component {
         super(props);
 
         this.state = {
-            character: []
+            characters: []
         }
     }
 
@@ -15,7 +15,7 @@ class CharacterList extends Component {
         axios.get('https://rickandmortyapi.com/api/character')
             .then( api => {
                 console.log(api.data.results)
-                this.setState({ character: api.data.results })
+                this.setState({ characters: api.data.results })
             })
             .catch( err => console.log(err));
         
@@ -24,7 +24,15 @@ class CharacterList extends Component {
     render(){
         return(
             <div>
-                CharacterList
+                {
+                    this.state.characters.map( 
+                        item => <div key={item.id}>
+                                <img src={item.image} alt={item.name} />
+                                <p>ID: {item.id} </p>
+                                <p>Name: {item.name} </p>
+                            </div>
+                    )
+                }
             </div>
         )
     }
