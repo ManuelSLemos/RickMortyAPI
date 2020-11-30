@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 
 import CharacterItem from '../../components/CharacterItem/CharacterItem';
+import PageWithLoader from '../../components/PageWithLoader/PageWithLoader';
 
 import './CharacterList.css';
 
@@ -78,7 +79,7 @@ class CharacterList extends Component {
         const { search, text, characters } = this.state;
 
         return(
-            <Fragment>
+            <PageWithLoader condiction={characters.length === 0} >
                 <div>
                     <button onClick={() => this.onBeforePage()}> Atras </button>
                     <input type="text" onChange={ event => this.onHandleChange(event) } />
@@ -92,7 +93,7 @@ class CharacterList extends Component {
                     }
                 </div>
                 <button onClick={() => this.onViewMore()}> Ver Más </button>
-            </Fragment>
+            </PageWithLoader>
         )
     }
     
