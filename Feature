@@ -1,0 +1,4 @@
+Crear el Component CharacterList con la llamada a Axios
+Configurar Redux 1 Reducer 1 Action Character
+Configurar Redux 1 Reducer 1 Action Location
+Configurar Redux 1 Reducer 1 Action Episodes
